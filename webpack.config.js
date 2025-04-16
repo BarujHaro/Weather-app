@@ -8,15 +8,14 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/template.html",
     }),
   ],
   devServer: {
-    watchFiles: ["./src/index.html"],
+    watchFiles: ["./src/template.html"],
   },
   module: {
     rules: [
