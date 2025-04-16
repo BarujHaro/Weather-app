@@ -15,7 +15,7 @@ function weather_report(){
         const hours = document.getElementById('hours');
         const Wdays = document.getElementById('Wdays');
         const today = document.getElementById('today');
-
+        const imgageC = document.getElementById('CImg');
         SearchBtn.addEventListener('click', async () => {
             const location = InputPlace.value.trim();
             if (!location) {
@@ -23,6 +23,7 @@ function weather_report(){
                 hours.style.display = "none";
                 today.style.display = "none";
                 Wdays.style.display = "none";
+                imgageC.style.display = "none";
                 message.innerHTML = '<p>Please, write the name of the city</p>';
                 return;
               }
@@ -31,6 +32,7 @@ function weather_report(){
                 const data = await getWeatherData(location);
                 console.log(data);
                 message.style.display= "none";
+                imgageC.style.display = "block";
                 getimage(location);
                 //Current day
                 displayCurrent(data);
@@ -43,6 +45,7 @@ function weather_report(){
                 hours.style.display = "none";
                 today.style.display = "none";
                 Wdays.style.display = "none";
+                imgageC.style.display = "none";
                 message.innerHTML = `<p>Error</p>`;
                 console.error(error);
             }
