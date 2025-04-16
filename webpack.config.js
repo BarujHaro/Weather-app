@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./scr/template.html",
+      template: "./scr/index.html",
     }),
   ],
   devServer: {
