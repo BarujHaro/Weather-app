@@ -1,18 +1,24 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: path.resolve(__dirname, 'src', 'index.html'), 
+      filename: 'index.html',
+    }),
+    new Dotenv({
+      systemvars: true, 
     }),
   ],
   devServer: {

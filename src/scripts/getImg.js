@@ -1,7 +1,7 @@
 
 export async function getimage(location){
     
-    const key ='rLmT8VE9r6n759bqxeFbnVGS5Po0mMZR86FW18xEO2dTrYHpt9EEN7YU';
+    const key = process.env.IMAGE_API_KEY;
 
 
     const response = await fetch(`https://api.pexels.com/v1/search?query=${location}&per_page=1`, {

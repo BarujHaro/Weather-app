@@ -1,6 +1,6 @@
 
 export async function getWeatherData(location) {
-    const key = 'XWPNV8KXF73YFGTBHEVRFWSUF';
+    const key = process.env.WEATHER_API_KEY;
     const response = await fetch (`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=${key}&contentType=json`);
     
     try{

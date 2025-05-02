@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && live-server",
-    "build": "webpack",
+    "start": "webpack && npx live-server dist",
+    "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -15,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.0",
     "file-loader": "^6.2.0",
     "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
